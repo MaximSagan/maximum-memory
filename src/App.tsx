@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import GameSetup from "./components/game-setup/GameSetup";
+import { GameSettings } from "./types";
+import GameBoard from "./components/game-board/GameBoard";
+import { useStyles } from "./styles";
 
-function App() {
+function App(): JSX.Element {
+  const classes = useStyles();
+  const [gameSettings, setGameSettings] = useState<GameSettings | null>(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      {gameSettings ? (
+        <GameBoard gameSettings={gameSettings} />
+      ) : (
+          <GameSetup onConfirmGameSettings={setGameSettings} />
+        )}
     </div>
   );
 }
