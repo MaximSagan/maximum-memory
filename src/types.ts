@@ -3,23 +3,15 @@ export interface CardTheme {
   title: string;
 }
 
-export const CARD_THEMES = [
-  {
-    id: "countries",
-    title: "Countries",
-  },
-  {
-    id: "heroes",
-    title: "Heroes",
-  },
-];
-
 export interface GameSettings {
   cardTheme: CardTheme;
   numberOfCards: number;
 }
 
-export interface ImageCardState {
+export interface GameCardStatus {
+  displayIndex: number;
   imageId: number;
-  isFlipped: boolean;
+  isFaceUp: boolean;
+  isActive: boolean;
+  isMatched: boolean;
 }

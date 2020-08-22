@@ -1,21 +1,19 @@
-import React, { useState } from "react";
-import GameSetup from "./components/game-setup/GameSetup";
-import { GameSettings } from "./types";
-import GameBoard from "./components/game-board/GameBoard";
-import { useStyles } from "./styles";
+import React from "react";
+import {
+  StylesProvider,
+  createGenerateClassName,
+} from "@material-ui/core/styles";
+import Game from "./Game";
+
+const generateClassName = createGenerateClassName({
+  productionPrefix: "mm",
+});
 
 function App(): JSX.Element {
-  const classes = useStyles();
-  const [gameSettings, setGameSettings] = useState<GameSettings | null>(null);
-
   return (
-    <div className={classes.root}>
-      {gameSettings ? (
-        <GameBoard gameSettings={gameSettings} />
-      ) : (
-          <GameSetup onConfirmGameSettings={setGameSettings} />
-        )}
-    </div>
+    <StylesProvider generateClassName={generateClassName}>
+      <Game />
+    </StylesProvider>
   );
 }
 

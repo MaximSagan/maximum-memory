@@ -10,6 +10,9 @@ export const useStyles = makeStyles((theme) => ({
   title: {
     marginBottom: theme.spacing(3),
   },
+  slider: {
+    marginBottom: theme.spacing(3),
+  },
   radioGroup: {
     display: "flex",
     justifyContent: "space-around",
@@ -17,10 +20,16 @@ export const useStyles = makeStyles((theme) => ({
   label: {
     color: theme.palette.text.primary,
     marginBottom: theme.spacing(3),
-    marginTop: theme.spacing(6),
+  },
+  cardThemeOption: {
+    width: 128,
+    height: 128,
   },
   startButton: {
     marginTop: theme.spacing(4),
-    textAlign: "right",
+    alignSelf: "flex-end",
+  },
+  extendedIcon: {
+    marginRight: theme.spacing(1),
   },
 }));
