@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/maximum-memory/static/css/main.6c986bf0.chunk.css",
+    "main.js": "/maximum-memory/static/js/main.743c192b.chunk.js",
+    "main.js.map": "/maximum-memory/static/js/main.743c192b.chunk.js.map",
+    "runtime-main.js": "/maximum-memory/static/js/runtime-main.fb30ab0a.js",
+    "runtime-main.js.map": "/maximum-memory/static/js/runtime-main.fb30ab0a.js.map",
+    "static/js/2.4d9b5e64.chunk.js": "/maximum-memory/static/js/2.4d9b5e64.chunk.js",
+    "static/js/2.4d9b5e64.chunk.js.map": "/maximum-memory/static/js/2.4d9b5e64.chunk.js.map",
+    "index.html": "/maximum-memory/index.html",
+    "precache-manifest.9004a3baa8bf0e5ea1ce32b3facb6fb7.js": "/maximum-memory/precache-manifest.9004a3baa8bf0e5ea1ce32b3facb6fb7.js",
+    "service-worker.js": "/maximum-memory/service-worker.js",
+    "static/css/main.6c986bf0.chunk.css.map": "/maximum-memory/static/css/main.6c986bf0.chunk.css.map",
+    "static/js/2.4d9b5e64.chunk.js.LICENSE.txt": "/maximum-memory/static/js/2.4d9b5e64.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fb30ab0a.js",
+    "static/js/2.4d9b5e64.chunk.js",
+    "static/css/main.6c986bf0.chunk.css",
+    "static/js/main.743c192b.chunk.js"
+  ]
+}
