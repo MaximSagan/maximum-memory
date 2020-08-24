@@ -155,7 +155,7 @@ export default React.memo(function GameBoard({
                 secondsUntilHideCards === 0 && classes.hideCardsCountdownFinished
               )}
             >
-              Flipping cards in {secondsUntilHideCards}...
+              Flipping in {secondsUntilHideCards}...
             </Typography>
           )}
       </div>

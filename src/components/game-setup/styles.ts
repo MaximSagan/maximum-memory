@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) => ({
   root: {
-    width: 400,
+    maxWidth: 400,
     padding: 20,
     display: "flex",
     flexDirection: "column",
@@ -11,6 +11,7 @@ export const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(3),
   },
   slider: {
+    marginTop: theme.spacing(1),
     marginBottom: theme.spacing(3),
   },
   radioGroup: {
@@ -22,8 +23,8 @@ export const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(3),
   },
   cardThemeOption: {
-    width: 128,
-    height: 128,
+    width: 90,
+    height: 90,
   },
   startButton: {
     marginTop: theme.spacing(4),

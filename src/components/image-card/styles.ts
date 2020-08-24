@@ -9,7 +9,7 @@ export const useStyles = makeStyles((theme) => {
     height: "100%",
     WebkitBackfaceVisibility: "hidden",
     backfaceVisibility: "hidden",
-    borderWidth: 2,
+    borderWidth: 4,
     borderStyle: "solid",
     borderRadius: theme.shape.borderRadius,
   };
@@ -66,6 +66,10 @@ export const useStyles = makeStyles((theme) => {
       borderColor: "black",
       color: "white",
       transform: "rotateY(180deg)",
+      "&:hover": {
+        borderColor: theme.palette.primary.main,
+        borderWidth: 4,
+      },
     },
     cardImage: {
       width: "100%",

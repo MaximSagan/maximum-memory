@@ -24,11 +24,11 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   imageCard: ({ numberOfCards }: StyleProps) => ({
     margin: theme.spacing(1),
-    width: numberOfCards < 20 ? 100 : 50,
-    height: numberOfCards < 20 ? 100 : 50,
+    width: numberOfCards < 20 ? 70 : 50,
+    height: numberOfCards < 20 ? 70 : 50,
     [theme.breakpoints.up("lg")]: {
-      width: numberOfCards < 20 ? 160 : 100,
-      height: numberOfCards < 20 ? 160 : 100,
+      width: numberOfCards < 20 ? 140 : 70,
+      height: numberOfCards < 20 ? 140 : 70,
     },
   }),
   gameInfo: {
