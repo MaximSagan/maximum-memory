@@ -6,17 +6,22 @@ import { useStyles } from "./styles";
 
 function Game(): JSX.Element {
   const classes = useStyles();
-  const [gameSettings, setGameSettings] = useState<GameSettings | null>(null);
+  const [gameSettings, setGameSettings] = useState<GameSettings | undefined>(undefined);
+  const [isGameActive, setIsGameActive] = useState(false);
 
-  const handleEndGame = useCallback(() => setGameSettings(null), []);
+  const handleStartGame = useCallback((settings: GameSettings) => {
+    setGameSettings(settings);
+    setIsGameActive(true);
+  }, []);
+  const handleEndGame = useCallback(() => setIsGameActive(false), []);
 
   return (
     <div className={classes.root}>
-      {gameSettings ? (
-        <GameBoard gameSettings={gameSettings} onEndGame={handleEndGame} />
+      {isGameActive ? (
+        <GameBoard gameSettings={gameSettings!} onEndGame={handleEndGame} />
       ) : (
-        <GameSetup onConfirmGameSettings={setGameSettings} />
-      )}
+          <GameSetup onConfirmGameSettings={handleStartGame} previousSettings={gameSettings} />
+        )}
     </div>
   );
 }

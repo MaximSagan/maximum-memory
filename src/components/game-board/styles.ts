@@ -27,8 +27,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
     width: numberOfCards < 20 ? 70 : 50,
     height: numberOfCards < 20 ? 70 : 50,
     [theme.breakpoints.up("lg")]: {
-      width: numberOfCards < 20 ? 140 : 70,
-      height: numberOfCards < 20 ? 140 : 70,
+      width: numberOfCards < 20 ? 140 : 100,
+      height: numberOfCards < 20 ? 140 : 100,
     },
   }),
   gameInfo: {
