@@ -46,12 +46,16 @@ export default React.memo(function GameBoard({
   const countDown$ = useObservable(() =>
     interval(1000).pipe(
       take(ALL_CARDS_VISIBLE_DURATION_SEC),
-      map((intervalIndex) => ALL_CARDS_VISIBLE_DURATION_SEC - intervalIndex - 1),
+      map(
+        (intervalIndex) => ALL_CARDS_VISIBLE_DURATION_SEC - intervalIndex - 1
+      ),
       share()
     )
   );
-  const secondsUntilHideCards = useObservableState(countDown$, ALL_CARDS_VISIBLE_DURATION_SEC);
-  console.log({ secondsUntilHideCards });
+  const secondsUntilHideCards = useObservableState(
+    countDown$,
+    ALL_CARDS_VISIBLE_DURATION_SEC
+  );
   const hideAllCards$ = useObservable(() =>
     concat(
       // Start hiding cards after the countdown finishes
@@ -147,21 +151,22 @@ export default React.memo(function GameBoard({
           End game
         </Button>
         {numberOfMisses > 0 ? (
-          <Typography>Misses: {numberOfMisses}</Typography>
+          <Typography data-testid="misses">Misses: {numberOfMisses}</Typography>
         ) : (
-            <Typography
-              className={classNames(
-                classes.hideCardsCountdown,
-                secondsUntilHideCards === 0 && classes.hideCardsCountdownFinished
-              )}
-            >
-              Flipping in {secondsUntilHideCards}...
-            </Typography>
-          )}
+          <Typography
+            className={classNames(
+              classes.hideCardsCountdown,
+              secondsUntilHideCards === 0 && classes.hideCardsCountdownFinished
+            )}
+          >
+            Flipping in {secondsUntilHideCards}...
+          </Typography>
+        )}
       </div>
       <div className={classes.gameCards}>
         {gameCards.map((gameCard, cardIndex) => (
           <ImageCard
+            key={cardIndex}
             className={classes.imageCard}
             src={`images/${cardTheme.id}/${gameCard.imageId}.png`}
             alt="Card"
@@ -169,6 +174,9 @@ export default React.memo(function GameBoard({
             isMatched={gameCard.isMatched}
             isActive={gameCard.isActive}
             onClick={() => handleGameCardClick(cardIndex)} // TODO: // Use memoized handler
+            data-testid={
+              isFlipAllowed && `testable-card-${cardIndex}-${gameCard.imageId}`
+            }
           />
         ))}
       </div>
@@ -176,6 +184,7 @@ export default React.memo(function GameBoard({
         className={classes.progress}
         variant="determinate"
         value={percentageProgress}
+        data-testid={`progressbar-${percentageProgress}`}
       />
       {percentageProgress === 100 && (
         <GameCompleteDialog

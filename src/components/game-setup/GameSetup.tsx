@@ -35,8 +35,12 @@ export default React.memo(function Settings({
     Math.floor(Math.random() * NUMBER_OF_IMAGES_IN_CARD_THEME)
   );
 
-  const [cardThemeId, setCardThemeId] = useState(previousSettings?.cardTheme?.id ?? DEFAULT_CARD_THEME_ID);
-  const [numberOfCards, setNumberOfCards] = useState(previousSettings?.numberOfCards ?? DEFAULT_NUMBER_OF_CARDS);
+  const [cardThemeId, setCardThemeId] = useState(
+    previousSettings?.cardTheme?.id ?? DEFAULT_CARD_THEME_ID
+  );
+  const [numberOfCards, setNumberOfCards] = useState(
+    previousSettings?.numberOfCards ?? DEFAULT_NUMBER_OF_CARDS
+  );
 
   const handleThemeChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>, value: string) => {

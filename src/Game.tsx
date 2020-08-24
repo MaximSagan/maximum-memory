@@ -6,7 +6,9 @@ import { useStyles } from "./styles";
 
 function Game(): JSX.Element {
   const classes = useStyles();
-  const [gameSettings, setGameSettings] = useState<GameSettings | undefined>(undefined);
+  const [gameSettings, setGameSettings] = useState<GameSettings | undefined>(
+    undefined
+  );
   const [isGameActive, setIsGameActive] = useState(false);
 
   const handleStartGame = useCallback((settings: GameSettings) => {
@@ -20,8 +22,11 @@ function Game(): JSX.Element {
       {isGameActive ? (
         <GameBoard gameSettings={gameSettings!} onEndGame={handleEndGame} />
       ) : (
-          <GameSetup onConfirmGameSettings={handleStartGame} previousSettings={gameSettings} />
-        )}
+        <GameSetup
+          onConfirmGameSettings={handleStartGame}
+          previousSettings={gameSettings}
+        />
+      )}
     </div>
   );
 }
