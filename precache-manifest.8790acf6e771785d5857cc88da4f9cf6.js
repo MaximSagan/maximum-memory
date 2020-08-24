@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c07715827b9dc1b35210417518bcd01e",
+    "revision": "e2af428619a052fed725b24645ef068b",
     "url": "/maximum-memory/index.html"
   },
   {
-    "revision": "1ce3fda0a45e49edf26f",
+    "revision": "f14e38656d0a07b5a2f7",
     "url": "/maximum-memory/static/css/main.6c986bf0.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/maximum-memory/static/js/2.234c17d5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1ce3fda0a45e49edf26f",
-    "url": "/maximum-memory/static/js/main.b3970984.chunk.js"
+    "revision": "f14e38656d0a07b5a2f7",
+    "url": "/maximum-memory/static/js/main.b184c106.chunk.js"
   },
   {
     "revision": "ab632f5b80289e35588b",
